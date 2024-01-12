@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global Functions</title>
+</head>
+</body>
+
+User Info #1:
+
+//range over users - slice of user (struct-slice) and print out the curent piece of that data
+{{range .}} 
+{{.}}
+{{end}}
+
+User Info #2:
+
+//if checks to see, if there is any data; that data is slice of user
+{{if .}}
+- {{.}}
+{{end}}
+
+User Info #3:
+
+// range over the data structure (slice of user) and checks if they have a "Name" and then, prnits out the name.
+{{range .}}
+{{if .Name}}
+- {{.Name}}
+{{end}}
+{{end}}
+
+User Info #4:
+
+{{range .}}
+{{if and .Admin .Motto}}
+- Name: {{.Name}}
+- Motto: {{.Motto}}
+- Admin: {{.Admin}}
+{{end}}
+{{end}}
+
+
+</body>
+</html>
